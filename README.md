@@ -1,7 +1,7 @@
 # Intelligent Candidate Discovery & Ranking — Redrob AI Hackathon
 
-**Team:** Sai Bhargav Rallapalli  
-**Contact:** sai.rallapalli@ril.com  
+**Team:** Team Arcturus 
+**Contact:** bhargav.incredibl@gmail.com 
 **Challenge:** Rank top 100 candidates from 100K profiles for the *Senior AI Engineer (Founding Team)* JD
 
 ---
