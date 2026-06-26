@@ -1,0 +1,13 @@
+# Large dataset files — do not commit
+India_runs_data_and_ai_challenge/candidates.jsonl
+
+# Helper scripts used during development
+update_ppt.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store

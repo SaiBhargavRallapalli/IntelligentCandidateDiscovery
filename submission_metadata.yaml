@@ -1,0 +1,60 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "Team Arcturus"
+
+primary_contact:
+  name: "Sai Bhargav Rallapalli"
+  email: "bhargav.inredibl@gmail.com"
+  phone: "+91 8147687931"
+
+team_members:
+  - name: "Sai Bhargav Rallapalli"
+    email: "bhargav.inredibl@gmail.com"
+    role: "Team Leader"
+
+github_repo: "https://github.com/saibhargavrallapalli/IntelligentCandidateDiscovery"
+sandbox_link: ""
+reproduce_command: "python rank.py --candidates ./India_runs_data_and_ai_challenge/candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "MacBook Air"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "macOS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architectural discussion and code review.
+  No candidate data was fed to any LLM during development or ranking.
+  All scoring logic is rule-based and deterministic.
+
+methodology_summary: |
+  Multi-signal weighted scoring system with five components:
+  role substance (30%), technical skills (25%), experience quality (20%),
+  behavioral signals (15%), location fit (10%).
+
+  Key design choices:
+  - Role substance analyzed via career title history + description keywords
+    (not just skills list), preventing keyword-stuffer false positives
+  - Skill taxonomy in 3 tiers matching JD's must-have/nice-to-have structure;
+    proficiency and duration_months both scale contribution
+  - Consulting-only career detection (TCS/Infosys/Wipro/Accenture/etc.) with
+    hard 0.25× penalty, per JD's explicit disqualifier
+  - Behavioral availability as a true signal: open_to_work, recency, response
+    rate, notice period combined with specific weights
+  - Honeypot detection: expert skills + 0 duration_months → disqualify
+  Runtime: ~14 seconds for 100K candidates on single CPU core, no dependencies.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
